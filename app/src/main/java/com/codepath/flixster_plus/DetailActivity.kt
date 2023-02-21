@@ -1,4 +1,4 @@
-package com.codepath.articlesearch
+package com.codepath.flixster_plus
 
 import android.os.Bundle
 import android.widget.ImageView
@@ -25,16 +25,16 @@ class DetailActivity : AppCompatActivity() {
         abstractTextView = findViewById(R.id.mediaAbstract)
 
         // TODO: Get the extra from the Intent
-        val article = intent.getSerializableExtra(ARTICLE_EXTRA) as Article
+        val movie = intent.getSerializableExtra(MOVIE_EXTRA) as Movie
 
-        // TODO: Set the title, byline, and abstract information from the article
-        titleTextView.text = article.headline?.main
-        bylineTextView.text = article.byline?.original
-        abstractTextView.text = article.abstract
+        // TODO: Set the title, byline, and abstract information from the movie
+        titleTextView.text = movie.title
+        bylineTextView.text = movie.overview
+        abstractTextView.text = movie.release_date
 
         // TODO: Load the media image
         Glide.with(this)
-            .load(article.mediaImageUrl)
+            .load("https://image.tmdb.org/t/p/w500" + movie.path)
             .into(mediaImageView)
     }
 }
