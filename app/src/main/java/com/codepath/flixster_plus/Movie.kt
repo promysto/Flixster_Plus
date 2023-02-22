@@ -17,6 +17,8 @@ data class Movie(
     val overview: String? = null,
     @SerialName("release_date")
     val release_date: String? = null,
+    @SerialName("vote_average")
+    val rating: Float? = null,
     @SerialName("poster_path")
     val path: String? = null
 ) : java.io.Serializable

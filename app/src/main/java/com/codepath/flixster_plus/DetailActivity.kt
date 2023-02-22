@@ -13,6 +13,7 @@ class DetailActivity : AppCompatActivity() {
     private lateinit var titleTextView: TextView
     private lateinit var bylineTextView: TextView
     private lateinit var abstractTextView: TextView
+    private lateinit var ratingTextView: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,6 +24,7 @@ class DetailActivity : AppCompatActivity() {
         titleTextView = findViewById(R.id.mediaTitle)
         bylineTextView = findViewById(R.id.mediaByline)
         abstractTextView = findViewById(R.id.mediaAbstract)
+        ratingTextView = findViewById(R.id.ratingTextView)
 
         // TODO: Get the extra from the Intent
         val movie = intent.getSerializableExtra(MOVIE_EXTRA) as Movie
@@ -31,6 +33,7 @@ class DetailActivity : AppCompatActivity() {
         titleTextView.text = movie.title
         bylineTextView.text = movie.overview
         abstractTextView.text = movie.release_date
+        ratingTextView.text = movie.rating.toString()
 
         // TODO: Load the media image
         Glide.with(this)
