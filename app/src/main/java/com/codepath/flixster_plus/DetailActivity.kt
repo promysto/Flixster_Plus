@@ -5,6 +5,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 
 private const val TAG = "DetailActivity"
 
@@ -38,6 +39,7 @@ class DetailActivity : AppCompatActivity() {
         // TODO: Load the media image
         Glide.with(this)
             .load("https://image.tmdb.org/t/p/w500" + movie.path)
+            .transform(RoundedCorners(36))
             .into(mediaImageView)
     }
 }

@@ -3,12 +3,14 @@ package com.codepath.flixster_plus
 import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
+import android.view.RoundedCorner
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 
 const val MOVIE_EXTRA = "MOVIE_EXTRA"
 private const val TAG = "MovieAdapter"
@@ -47,6 +49,7 @@ class MovieAdapter(private val context: Context, private val movies: List<Movie>
 
             Glide.with(context)
                 .load("https://image.tmdb.org/t/p/w500" +  movie.path)
+                .transform(RoundedCorners(36))
                 .into(mediaImageView)
         }
 
